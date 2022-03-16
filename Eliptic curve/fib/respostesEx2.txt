@@ -1,0 +1,9 @@
+1. 2152 certificados revocados.
+Obtenido con los comandos: 
+	openssl crl -in TERENASSCA3.crl -text -inform DER > crl.txt
+	grep "Revocation Date" crl.txt | wc -l
+2. El estado del certificado es "good" i es vàlid fins: Fri, 08 Apr 2022 12:00:00 GMT
+Obtenido con los comandos:
+	openssl x509 -inform DER -outform PEM -in TERENASSCA3.crt -out TERENASSCA3.pem
+	openssl x509 -inform DER -outform PEM -in DigiCertAssuredIDRootCA.crt -out DigiCertAssuredIDRootCA.pem
+	openssl ocsp -issuer TERENASSLCA3.pem -url http://ocsp.digicert.com -CAfile DigiCertAssuredIDRootCA.pem

@@ -1,0 +1,6 @@
+Els paquets de la connexión són:
+
+	Nº 	Nom
+	529	Client Hello
+	531	Server Hello
+	533	Certificate
